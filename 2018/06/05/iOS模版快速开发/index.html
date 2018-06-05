@@ -7,17 +7,17 @@
   
   <title>iOS模版快速开发 | MuFengYi&#39; blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到123456789101112131415让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:- (void)navigationController:(UINavi">
+  <meta name="description" content="iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到12345678910111213141516171819让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:- (void)navigationController">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS模版快速开发">
 <meta property="og:url" content="http://yoursite.com/2018/06/05/iOS模版快速开发/index.html">
 <meta property="og:site_name" content="MuFengYi&#39; blog">
-<meta property="og:description" content="iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到123456789101112131415让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:- (void)navigationController:(UINavi">
+<meta property="og:description" content="iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到12345678910111213141516171819让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:- (void)navigationController">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-05T07:44:22.993Z">
+<meta property="og:updated_time" content="2018-06-05T07:50:18.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS模版快速开发">
-<meta name="twitter:description" content="iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到123456789101112131415让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:- (void)navigationController:(UINavi">
+<meta name="twitter:description" content="iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到12345678910111213141516171819让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:- (void)navigationController">
   
     <link rel="alternate" href="/atom.xml" title="MuFengYi&#39; blog" type="application/atom+xml">
   
@@ -90,12 +90,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:</span><br><span class="line"></span><br><span class="line">- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated &#123;</span><br><span class="line">if ([UIDevice currentDevice].systemVersion.floatValue &lt; 11) &#123;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">if ([viewController isKindOfClass:NSClassFromString(@&quot;PUPhotoPickerHostViewController&quot;)]) &#123;</span><br><span class="line">[viewController.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) &#123;</span><br><span class="line">if (obj.frame.size.width &lt; 42) &#123;</span><br><span class="line">[viewController.view sendSubviewToBack:obj];</span><br><span class="line">*stop = YES;</span><br><span class="line">&#125;</span><br><span class="line">&#125;];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>iOS 11 ，如果给 UIImagePickerController 设置 allowsEditing = YES，然后在编辑图片的时候，却发现左下角的那个 取消 按键怎么也没法点击到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">让你的类实现 UINavigationControllerDelegate 接口，然后实现这个方法:</span><br><span class="line">- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated </span><br><span class="line">&#123;</span><br><span class="line">    if ([UIDevice currentDevice].systemVersion.floatValue &lt; 11) </span><br><span class="line">    &#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if ([viewController isKindOfClass:NSClassFromString(@&quot;PUPhotoPickerHostViewController&quot;)]) </span><br><span class="line">    &#123;</span><br><span class="line">        [viewController.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) </span><br><span class="line">        &#123;</span><br><span class="line">            if (obj.frame.size.width &lt; 42) </span><br><span class="line">            &#123;</span><br><span class="line">                [viewController.view sendSubviewToBack:obj];</span><br><span class="line">                *stop = YES;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/05/iOS模版快速开发/" data-id="cji1dpvem0001ugoz7jo7txcu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/05/iOS模版快速开发/" data-id="cji1eeq7600012zozf9uf1624" class="article-share-link">Share</a>
       
       
     </footer>
