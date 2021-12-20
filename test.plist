@@ -26,7 +26,7 @@
 
      <key>url</key>
 
-     <string>https://gitee.com/tjc123/iosssl/raw/master/__UNI__39D402B_0313171239.ipa</string>
+     <string>http://ifengstar.com//download/e37e63e1d214443d81fce70b188d9ff2.ipa</string>
 
     </dict>
 
@@ -70,11 +70,11 @@
 
     <key>bundle-identifier</key>
 
-    <string>io.vimtech.guarantee.ios.app</string>
+    <string>com.haoke.QiYou</string>
 
     <key>bundle-version</key>
 
-    <string>1.1.1</string>
+    <string>1.0.4</string>
 
     <key>kind</key>
 
